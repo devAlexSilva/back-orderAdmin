@@ -8,7 +8,6 @@ export const Order = model(
       type: String,
     },
     status: {
-      required: true,
       type: String,
       enum: ['WAITING', 'IN_PRODUCTION', 'DONE'],
       default: 'WAITING',
