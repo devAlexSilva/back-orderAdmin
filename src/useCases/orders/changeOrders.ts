@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { Order } from '../../model/Order'
 
-export async function changeOrdes(req: Request, res: Response) {
+export async function ChangeOrdes(req: Request, res: Response) {
   const { orderId } = req.params
   const { status } = req.body
 
@@ -14,7 +14,7 @@ export async function changeOrdes(req: Request, res: Response) {
 
     await Order.findByIdAndUpdate(orderId, { status })
     res.sendStatus(204)
-    
+
   } catch (error) {
     res.status(500).json({ error: `${error}` })
   }

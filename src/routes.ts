@@ -10,7 +10,8 @@ import { ListCategories } from './useCases/categories/listCategories'
 import { ListProductsByCategoryId } from './useCases/categories/listProductsByCategoryId'
 import { ListOrders } from './useCases/orders/listOrders'
 import { CreateOrders } from './useCases/orders/createOrders'
-import { changeOrdes } from './useCases/orders/changeOrders'
+import { ChangeOrdes } from './useCases/orders/changeOrders'
+import { CancelOrders } from './useCases/orders/cancelOrders'
 
 export const router = Router()
 
@@ -35,5 +36,5 @@ router.get('/categories/:categoryId/products', ListProductsByCategoryId)
 
 router.get('/orders', ListOrders)
 router.post('/orders', CreateOrders)
-router.patch('/orders/:orderId', changeOrdes)
-router.delete('/orders/:orderId', (req, res) => res.send('ok'))
+router.patch('/orders/:orderId', ChangeOrdes)
+router.delete('/orders/:orderId', CancelOrders)
